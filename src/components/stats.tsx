@@ -39,7 +39,7 @@ export default function Stats() {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="space-y-1 border rounded-lg p-6 flex items-center justify-center flex-col hover:scale-105 transition-transform"
+            className="space-y-1 border rounded-lg p-6 flex items-center justify-center flex-col shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <h3 className="text-4xl font-bold">{item.value}</h3>
             <p className="text-sm md:text-base opacity-80">{item.label}</p>

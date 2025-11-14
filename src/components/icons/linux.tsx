@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function LinuxIcon() {
+export default function LinuxIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 128 128">
+    <svg viewBox="0 0 128 128" className={className}>
       <radialGradient
         id="linux-original-a"
         cx="-992.915"
