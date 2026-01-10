@@ -20,4 +20,5 @@ interface Image {
   src: string;
   title: string;
   description?: string;
+  isMobile?: boolean;
 }

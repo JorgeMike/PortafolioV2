@@ -2,20 +2,18 @@ import { motion, useInView } from "motion/react";
 import React, { useRef, useState } from "react";
 import {
   ExternalLink,
-  Filter,
   GitBranch,
   Award,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { allProjects, featuredProjects } from "@/const/projects";
+import { allProjects } from "@/const/projects";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import "@justinribeiro/lite-youtube";
 import type { Experience } from "@/types/types";
 
 export default function Projects() {
   const ref = useRef(null);
-  const [activeFilter, setActiveFilter] = useState("all");
   const [selectedProject, setSelectedProject] = useState<Experience | null>(
     null
   );
@@ -52,31 +50,9 @@ export default function Projects() {
     }
   };
 
-  // Filtros disponibles
-  const filters = [
-    { id: "all", label: "All Projects", count: allProjects.length },
-    {
-      id: "Web App",
-      label: "Web Apps",
-      count: allProjects.filter((p) => p.category === "Web App").length,
-    },
-    {
-      id: "AI/ML",
-      label: "AI/ML",
-      count: allProjects.filter((p) => p.category === "AI/ML").length,
-    },
-    {
-      id: "Academic",
-      label: "Academic",
-      count: allProjects.filter((p) => p.category === "Academic").length,
-    },
-  ];
-
-  // Proyectos filtrados
-  const filteredProjects =
-    activeFilter === "all"
-      ? allProjects.filter((p) => !p.featured)
-      : allProjects.filter((p) => p.category === activeFilter && !p.featured);
+  // Proyectos no destacados
+  const regularProjects = allProjects.filter((p) => !p.featured);
+  const featuredProjects = allProjects.filter((p) => p.featured);
 
   return (
     <section ref={ref} className="container mx-auto px-6 py-16">
@@ -166,32 +142,6 @@ export default function Projects() {
         </div>
       </motion.div>
 
-      {/* FILTROS */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.7 }}
-        className="flex flex-wrap justify-center gap-3 mb-12"
-      >
-        {filters.map((filter) => (
-          <button
-            key={filter.id}
-            onClick={() => setActiveFilter(filter.id)}
-            className={`px-4 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2 ${
-              activeFilter === filter.id
-                ? "bg-primary text-primary-foreground shadow-lg scale-105"
-                : "bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            <Filter className="w-4 h-4" />
-            {filter.label}
-            <span className="text-xs bg-black/10 px-1.5 py-0.5 rounded">
-              {filter.count}
-            </span>
-          </button>
-        ))}
-      </motion.div>
-
       {/* GRID DE TODOS LOS PROYECTOS */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -201,7 +151,7 @@ export default function Projects() {
         <h3 className="text-2xl font-bold mb-8 text-center">All Projects</h3>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
+          {regularProjects.map((project, index) => (
             <motion.div
               key={project.id}
               layout
@@ -292,25 +242,17 @@ export default function Projects() {
         </div>
 
         {/* Estado vacío */}
-        {filteredProjects.length === 0 && (
+        {regularProjects.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-center py-12"
           >
-            <div className="w-24 h-24 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center">
-              <Filter className="w-12 h-12 text-muted-foreground" />
-            </div>
+            <div className="w-24 h-24 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center"></div>
             <h3 className="text-xl font-semibold mb-2">No projects found</h3>
             <p className="text-muted-foreground mb-4">
               No projects match the current filter criteria.
             </p>
-            <button
-              onClick={() => setActiveFilter("all")}
-              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
-            >
-              Show All Projects
-            </button>
           </motion.div>
         )}
       </motion.div>
@@ -334,9 +276,9 @@ export default function Projects() {
                 {/* COLUMNA IZQUIERDA - GALERÍA */}
                 <div className="space-y-4">
                   {/* Imagen principal */}
-                  <div className="relative h-90 bg-muted rounded-xl overflow-hidden">
+                  <div className="relative h-90 bg-muted rounded-xl overflow-hidden flex items-center justify-center">
                     {/* Badge de categoría */}
-                    <div className="absolute top-3 left-3">
+                    <div className="absolute top-3 left-3 z-10">
                       <span className="px-3 py-1 bg-primary text-primary-foreground rounded-full text-sm font-medium">
                         {selectedProject.category}
                       </span>
@@ -352,7 +294,11 @@ export default function Projects() {
                         alt={`${selectedProject.title} - Image ${
                           currentImageIndex + 1
                         }`}
-                        className="w-full h-full object-cover"
+                        className={
+                          selectedProject.images[currentImageIndex]?.isMobile
+                            ? "h-full w-auto max-w-[50%] object-contain"
+                            : "w-full h-full object-cover"
+                        }
                         onError={(e) => {
                           e.currentTarget.src = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><rect width="600" height="400" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%236b7280" font-family="sans-serif" font-size="18">${selectedProject.title}</text></svg>`;
                         }}

@@ -6,6 +6,15 @@ import Image3 from "@/assets/images/evaluacion-docente/image_3.png";
 import Image4 from "@/assets/images/evaluacion-docente/image_4.png";
 import Image5 from "@/assets/images/evaluacion-docente/image_5.png";
 import Image6 from "@/assets/images/evaluacion-docente/image_6.png";
+import DSC from "@/assets/images/cedetec/DSc.png";
+import Login from "@/assets/images/cedetec/login.png";
+import Landing from "@/assets/images/cedetec/landing.png";
+import RegistroLanding from "@/assets/images/registro/landing.png";
+import RegistroRegister from "@/assets/images/registro/register.png";
+import RegistroSuccessEmail from "@/assets/images/registro/succes_email.png";
+import RegistroSuccessRegister from "@/assets/images/registro/succes_register.png";
+import CameraScanner from "@/assets/images/registro/camera_scanning.jpeg";
+import CameraRequest from "@/assets/images/registro/camera_request.jpeg";
 import type { Experience } from "@/types/types";
 
 // Proyectos destacados para el hero
@@ -90,6 +99,113 @@ export const featuredProjects: Experience[] = [
         src: Image6,
         title: "Survey Preview",
         description: "Student view before submission",
+      },
+    ],
+  },
+  {
+    id: "cedetec",
+    title: "CEDETEC Technological Development Center Website",
+    description:
+      "Informative web platform showcasing CEDETEC department services, featuring comprehensive event management system with creation, administration, and automated attendee list generation capabilities.",
+    shortDescription:
+      "Web platform for CEDETEC services with event management and attendee tracking.",
+    image: Landing,
+    technologies: ["Next.js", "Nest.js", "TypeScript", "MySQL", "React"],
+    category: "Web App",
+    featured: false,
+    links: {
+      demo: "https://cedetec.acatlan.unam.mx",
+      github: null,
+    },
+    highlights: [
+      "Event Management System",
+      "Service Information Portal",
+      "Automated Attendee Lists",
+      "Administrative Dashboard",
+    ],
+    images: [
+      {
+        src: Landing,
+        title: "Landing Page",
+        description: "Dynamic carousel landing page updated by administrators",
+      },
+      {
+        src: Login,
+        title: "Admin Login",
+        description: "Secure authentication portal for event administrators",
+      },
+      {
+        src: DSC,
+        title: "Event Dashboard",
+        description: "Event management interface with attendee list generation",
+      },
+    ],
+  },
+  {
+    id: "event-registration-system",
+    title: "Event Registration System",
+    description:
+      "Comprehensive event management platform enabling faculty to create internal and external events with automated information autofill for students and professors. Features QR-based attendance tracking, automatic attendee list generation, capacity management, and role-based administration with Markdown support for rich content customization.",
+    shortDescription:
+      "Event management platform with QR attendance, autofill, and capacity control.",
+    image: RegistroLanding,
+    technologies: [
+      "Next.js",
+      "Nest.js",
+      "TypeScript",
+      "MySQL",
+      "React",
+      "QR Code",
+    ],
+    category: "Web App",
+    featured: false,
+    links: {
+      demo: "",
+      github: null,
+    },
+    highlights: [
+      "QR-Based Attendance Tracking",
+      "Automated Registration Autofill",
+      "Capacity Management System",
+      "Role-Based Access Control",
+      "Markdown Content Support",
+      "Real-time Attendee Reports",
+    ],
+    images: [
+      {
+        src: RegistroLanding,
+        title: "Event Landing Page",
+        description: "Event information page with Markdown-formatted content",
+      },
+      {
+        src: RegistroRegister,
+        title: "Registration Form",
+        description:
+          "Auto-fill registration form for internal students and professors",
+      },
+      {
+        src: RegistroSuccessRegister,
+        title: "Registration Confirmation",
+        description:
+          "Successful registration with QR code for event attendance",
+      },
+      {
+        src: RegistroSuccessEmail,
+        title: "Email Confirmation",
+        description:
+          "Automated email with QR attendance code and event details",
+      },
+      {
+        src: CameraRequest,
+        title: "Camera Permission Request",
+        description: "Browser camera access request for QR code scanning",
+        isMobile: true,
+      },
+      {
+        src: CameraScanner,
+        title: "QR Code Scanner",
+        description: "Live QR code scanning interface for attendance tracking",
+        isMobile: true,
       },
     ],
   },
