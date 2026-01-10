@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
 export default function Stats() {
@@ -17,7 +17,7 @@ export default function Stats() {
   ];
 
   return (
-    <section ref={ref} className="flex items-center justify-center px-6 py-24">
+    <section ref={ref} className="flex items-center justify-center">
       <motion.div
         className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center max-w-4xl"
         initial="hidden"
@@ -39,7 +39,7 @@ export default function Stats() {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="space-y-1 border rounded-lg p-6 flex items-center justify-center flex-col shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="space-y-1 border rounded-lg p-6 flex items-center justify-center flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-zinc-900"
           >
             <h3 className="text-4xl font-bold">{item.value}</h3>
             <p className="text-sm md:text-base opacity-80">{item.label}</p>

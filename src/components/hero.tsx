@@ -27,7 +27,7 @@ export default function Hero() {
               duration: 0.7,
               ease: "easeInOut",
             }}
-            className="font-retro text-6xl md:text-7xl"
+            className="font-retro text-6xl md:text-8xl"
           >
             <span>Hi! I'm </span> <br />
             <AnimatePresence mode="wait">
@@ -40,29 +40,51 @@ export default function Hero() {
                   duration: 0.7,
                   ease: "easeInOut",
                 }}
-                className="inline-block"
+                className="inline-block font-bold text-blue-500"
               >
                 {texts[textIndex]}
               </motion.span>
             </AnimatePresence>
           </motion.div>
-          <motion.p
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.7,
-              ease: "easeInOut",
-              delay: 0.3,
-            }}
-            className="mt-10 text-lg"
-          >
-            I'm a passionate developer with experience in building web
-            applications.
-          </motion.p>
+          <div>
+            <motion.p
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.7,
+                ease: "easeInOut",
+                delay: 0.3,
+              }}
+              className="mt-10 text-lg"
+            >
+              I'm a passionate developer with experience in building web
+              applications.
+            </motion.p>
+            <motion.span
+              initial={{ opacity: 0, width: 0 }}
+              animate={{ opacity: 1, width: 300 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+                delay: 1.2,
+              }}
+              className="h-2 absolute bg-gradient-to-r from-blue-500 to-transparent"
+            ></motion.span>
+          </div>
           <div className="mt-10">
-            <Button variant="default" size="lg">
-              Got an idea? Let's talk.
-            </Button>
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.7,
+                ease: "easeInOut",
+                delay: 0.6,
+              }}
+            >
+              <Button variant="default" size="lg" className="transition-all ">
+                Got an idea? Let's talk.
+              </Button>
+            </motion.div>
           </div>
         </div>
 

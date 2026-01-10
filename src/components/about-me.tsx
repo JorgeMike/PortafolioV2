@@ -1,4 +1,3 @@
-import React from "react";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
@@ -14,7 +13,7 @@ export default function AboutMe() {
   return (
     <section
       ref={ref}
-      className="py-24 flex items-center justify-center  px-6 "
+      className="flex items-center justify-center mb-6 md:mb-0"
     >
       <div className="max-w-3xl space-y-10">
         {/* TÍTULO */}
@@ -34,9 +33,9 @@ export default function AboutMe() {
           transition={{ delay: 0.2, duration: 1.5 }}
           className="text-lg leading-relaxed"
         >
-          I'm a <strong>Full-stack developer</strong> specialized in the{" "}
-          <strong>JavaScript/TypeScript</strong> ecosystem, with experience
-          building{" "}
+          I'm a <strong className="text-blue-500">Full-stack developer</strong>{" "}
+          specialized in the <strong>JavaScript/TypeScript</strong> ecosystem,
+          with experience building{" "}
           <span className="font-semibold text-brand-500">
             scalable applications
           </span>
