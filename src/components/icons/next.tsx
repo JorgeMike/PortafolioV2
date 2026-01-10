@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function NextIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 128 128" className={className}>

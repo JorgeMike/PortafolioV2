@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function AWSIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 128 128" className={className}>
