@@ -175,13 +175,12 @@ export const featuredProjects: Experience[] = [
       {
         src: RegistroLanding,
         title: "Event Landing Page",
-        description: "Event information page with Markdown-formatted content",
+        description: "Landing page showing currents events",
       },
       {
         src: RegistroRegister,
         title: "Registration Form",
-        description:
-          "Auto-fill registration form for internal students and professors",
+        description: "Registration form for internal students or professors",
       },
       {
         src: RegistroSuccessRegister,
