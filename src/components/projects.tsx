@@ -284,7 +284,7 @@ export default function Projects() {
                       </span>
                     </div>
 
-                    {selectedProject.images.length > 1 ? (
+                    {selectedProject.images.length > 0 ? (
                       <img
                         src={
                           selectedProject.images
