@@ -8,6 +8,10 @@ import Image5 from "@/assets/images/evaluacion-docente/image_5.png";
 import Image6 from "@/assets/images/evaluacion-docente/image_6.png";
 import DSC from "@/assets/images/cedetec/DSc.png";
 import Login from "@/assets/images/cedetec/login.png";
+import LoginPDISystem from "@/assets/images/pdi/login.png";
+import Private from "@/assets/images/votaciones/image.png";
+import PharmacyUIHome from "@/assets/images/pharmacy/ui.png";
+import MoratoryInterestCalculator from "@/assets/images/calculator/image.png";
 import Landing from "@/assets/images/cedetec/landing.png";
 import RegistroLanding from "@/assets/images/registro/landing.png";
 import RegistroRegister from "@/assets/images/registro/register.png";
@@ -205,6 +209,115 @@ export const featuredProjects: Experience[] = [
         title: "QR Code Scanner",
         description: "Live QR code scanning interface for attendance tracking",
         isMobile: true,
+      },
+    ],
+  },
+  {
+    id: "pdi-system",
+    title: "Institutional Development Plan",
+    description:
+      "System used by the faculty administration to publish the Institutional Development Plan and receive feedback from the university community to take their opinions into account",
+    shortDescription:
+      "System for feedback on the institutional development plan",
+    image: RegistroLanding,
+    technologies: ["Next.js", "Nest.js", "TypeScript", "React"],
+    category: "Web App",
+    featured: false,
+    links: {
+      demo: "",
+      github: null,
+    },
+    highlights: ["Capacity Management System", "Role-Based Access Control"],
+    images: [
+      {
+        src: LoginPDISystem,
+        title: "Login Page",
+        description: "Login page to access the system",
+      },
+    ],
+  },
+  {
+    id: "internal-elections-system",
+    title: "Internal Elections System",
+    description:
+      "System used for managing internal university elections, including the publication and upload of candidate lists, vote registration, role-based permission enforcement for voting, PDF generation of results, and real-time result monitoring through WebSockets for supervision purposes",
+    shortDescription:
+      "System for managing internal university elections and real-time voting results",
+    image: RegistroLanding,
+    technologies: ["Next.js", "Nest.js", "TypeScript", "React"],
+    category: "Web App",
+    featured: false,
+    links: {
+      demo: "",
+      github: null,
+    },
+    highlights: [
+      "Role-Based Voting Permissions",
+      "Real-Time Results with WebSockets",
+      "PDF Generation of Election Results",
+      "Secure Vote Registration",
+    ],
+    images: [
+      {
+        src: Private,
+        title: "Private System",
+        description: "",
+      },
+    ],
+  },
+  {
+    id: "pharmacy-ui",
+    title: "Pharmacy Management UI",
+    description:
+      "User interface design for a pharmacy management system, focused exclusively on the visual layer, including product listing, layout structure, and navigation without backend functionality",
+    shortDescription: "UI-only pharmacy management interface",
+    image: RegistroLanding,
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    category: "Web UI",
+    featured: false,
+    links: {
+      demo: "https://jorgemike.github.io/Farmacia/",
+      github: null,
+    },
+    highlights: [
+      "Clean and Responsive Layout",
+      "Product Listing Interface",
+      "User-Friendly Navigation",
+      "UI-Focused Design (No Backend)",
+    ],
+    images: [
+      {
+        src: PharmacyUIHome,
+        title: "Main Interface",
+        description: "Main UI view of the pharmacy interface",
+      },
+    ],
+  },
+  {
+    id: "moratory-interest-calculator",
+    title: "Moratory Interest Calculator",
+    description:
+      "Web application developed to calculate moratory interest, allowing users to input loan details and automatically compute the interest based on the provided data",
+    shortDescription: "Web app for calculating moratory interest",
+    image: RegistroLanding,
+    technologies: ["Next.js", "Bootstrap", "JavaScript"],
+    category: "Web App",
+    featured: false,
+    links: {
+      demo: "https://jorgemike.github.io/calculadora_interes_moratorio/",
+      github: null,
+    },
+    highlights: [
+      "Moratory Interest Calculation",
+      "Simple and Intuitive Form Inputs",
+      "Responsive UI with Bootstrap",
+      "Client-Side Calculation Logic",
+    ],
+    images: [
+      {
+        src: MoratoryInterestCalculator,
+        title: "Calculator Interface",
+        description: "Main interface for calculating moratory interest",
       },
     ],
   },
