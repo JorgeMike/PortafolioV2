@@ -8,7 +8,6 @@ import Image5 from "@/assets/images/evaluacion-docente/image_5.png";
 import Image6 from "@/assets/images/evaluacion-docente/image_6.png";
 import DSC from "@/assets/images/cedetec/DSc.png";
 import Login from "@/assets/images/cedetec/login.png";
-import LoginPDISystem from "@/assets/images/pdi/login.png";
 import Private from "@/assets/images/votaciones/image.png";
 import PharmacyUIHome from "@/assets/images/pharmacy/ui.png";
 import MoratoryInterestCalculator from "@/assets/images/calculator/image.png";
@@ -20,6 +19,7 @@ import RegistroSuccessRegister from "@/assets/images/registro/succes_register.pn
 import CameraScanner from "@/assets/images/registro/camera_scanning.jpeg";
 import CameraRequest from "@/assets/images/registro/camera_request.jpeg";
 import type { Experience } from "@/types/types";
+import LoginPDISystem from "@/assets/images/pdi/login-page.png";
 
 // Proyectos destacados para el hero
 export const featuredProjects: Experience[] = [
@@ -219,7 +219,7 @@ export const featuredProjects: Experience[] = [
       "System used by the faculty administration to publish the Institutional Development Plan and receive feedback from the university community to take their opinions into account",
     shortDescription:
       "System for feedback on the institutional development plan",
-    image: RegistroLanding,
+    image: LoginPDISystem,
     technologies: ["Next.js", "Nest.js", "TypeScript", "React"],
     category: "Web App",
     featured: false,
@@ -243,7 +243,7 @@ export const featuredProjects: Experience[] = [
       "System used for managing internal university elections, including the publication and upload of candidate lists, vote registration, role-based permission enforcement for voting, PDF generation of results, and real-time result monitoring through WebSockets for supervision purposes",
     shortDescription:
       "System for managing internal university elections and real-time voting results",
-    image: RegistroLanding,
+    image: Private,
     technologies: ["Next.js", "Nest.js", "TypeScript", "React"],
     category: "Web App",
     featured: false,
@@ -271,7 +271,7 @@ export const featuredProjects: Experience[] = [
     description:
       "User interface design for a pharmacy management system, focused exclusively on the visual layer, including product listing, layout structure, and navigation without backend functionality",
     shortDescription: "UI-only pharmacy management interface",
-    image: RegistroLanding,
+    image: PharmacyUIHome,
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     category: "Web UI",
     featured: false,
@@ -299,7 +299,7 @@ export const featuredProjects: Experience[] = [
     description:
       "Web application developed to calculate moratory interest, allowing users to input loan details and automatically compute the interest based on the provided data",
     shortDescription: "Web app for calculating moratory interest",
-    image: RegistroLanding,
+    image: MoratoryInterestCalculator,
     technologies: ["Next.js", "Bootstrap", "JavaScript"],
     category: "Web App",
     featured: false,
