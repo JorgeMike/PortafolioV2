@@ -11,7 +11,7 @@ export default function Stats() {
 
   const stats = [
     { value: "3+", label: "Years of experience" },
-    { value: "5", label: "Apps led" },
+    { value: "3", label: "Apps led" },
     { value: "20+", label: "Developers mentored" },
     { value: "100k+", label: "Surveys processed" },
   ];
