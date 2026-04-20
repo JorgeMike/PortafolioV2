@@ -5,6 +5,8 @@ import Stats from "./components/stats";
 import SkillsCarousel from "./components/skills";
 import Experience from "./components/experience";
 import Projects from "./components/projects";
+import CarwashPitch from "./components/carwash-pitch";
+import CarwashLandingPreview from "./components/carwash-landing-preview";
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
       <SkillsCarousel />
       <Experience />
       <Projects />
+      <CarwashPitch />
+      <CarwashLandingPreview />
     </main>
   );
 }
